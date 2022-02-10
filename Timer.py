@@ -1,6 +1,5 @@
-from.. import loader 
+from .. import loader, utils
 from time import sleep
-from random import choice
 
 
 
