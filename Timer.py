@@ -14,7 +14,7 @@ class TimerMod(loader.Module):
         try:
             int(time)
             for i in range(time):
-                await event.edit(time + ' sec')
+                await event.edit(str(time) + ' sec')
                 sleep(1)
                 time-=1
             await event.edit('ypa )')
