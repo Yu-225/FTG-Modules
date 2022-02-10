@@ -10,4 +10,4 @@ class TimerMod(loader.Module):
     async def timercmd(self, message):
         """Timer sec"""
         time = utils.get_args_raw(message)
-        await event.edit(time + ' sec')
+        await message.edit(time + ' sec')
