@@ -9,10 +9,11 @@ class TimerMod(loader.Module):
     
     async def timercmd(self, event):
         """Timer sec"""
+        
         time = utils.get_args_raw(event)
         
         try:
-            int(time)
+            time = int(time)
             for i in range(time):
                 await event.edit(str(time) + ' sec')
                 sleep(1)
