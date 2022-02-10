@@ -11,11 +11,16 @@ class TimerMod(loader.Module):
         """Timer sec"""
         time = utils.get_args_raw(event)
         
-        try: int(time)
-        except: await event.edit('Error: Invalid You і твоя команда')
+        try:
+            int(time)
+            for i in range(time):
+                await event.edit(time + ' sec')
+                sleep(1)
+                time-=1
+            await event.edit('ypa )')
 
-        for i in range(time):
-            await event.edit(time + ' sec')
-            sleep(1)
-            time-=1
-        await event.edit('ypa )')
+
+        except:
+            await event.edit('Error: Invalid You і твоя команда')
+
+        
