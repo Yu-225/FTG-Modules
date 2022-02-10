@@ -18,10 +18,10 @@ class TimerMod(loader.Module):
                 await event.edit(str(time) + ' sec')
                 sleep(1)
                 time-=1
-            await event.edit('ypa )')
+            await event.edit('Time is up!')
 
 
         except:
-            await event.edit('Error: Invalid You і твоя команда')
+            await event.edit('Error: Invalid number')
 
         
