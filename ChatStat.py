@@ -9,7 +9,7 @@ class InformationMod(loader.Module):
   "Статистика чату" 
   strings = {"name": "ChatStatistic"} 
   @loader.owner 
-  async def statacmd(self, m): 
+  async def statcmd(self, m): 
    await m.edit("<b>📊Підраховую ...</b>") 
    al = str((await m.client.get_messages(m.to_id, limit=0)).total) 
    ph = str((await m.client.get_messages(m.to_id, limit=0, filter=InputMessagesFilterPhotos())).total) 
