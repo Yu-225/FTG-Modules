@@ -10,6 +10,7 @@ class InformationMod(loader.Module):
   strings = {"name": "ChatStatistic"} 
   @loader.owner 
   async def statcmd(self, m): 
+    """Кількість всіх повідомлень у чаті"""
    await m.edit("<b>📊Підраховую ...</b>") 
    al = str((await m.client.get_messages(m.to_id, limit=0)).total) 
    ph = str((await m.client.get_messages(m.to_id, limit=0, filter=InputMessagesFilterPhotos())).total) 
