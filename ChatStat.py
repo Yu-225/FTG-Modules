@@ -7,7 +7,7 @@ from telethon.tl.types import *
 
 class InformationMod(loader.Module): 
   "Статистика чату" 
-  strings = {"name": "ChatStatistic"} 
+  strings = {"name": "ChatStat"} 
   @loader.owner 
   async def statcmd(self, m): 
     """Кількість всіх повідомлень у чаті"""
