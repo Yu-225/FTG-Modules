@@ -24,14 +24,14 @@ class InformationMod(loader.Module):
     geos = str((await m.client.get_messages(m.to_id, limit=0, filter=InputMessagesFilterGeo())).total)
     cont = str((await m.client.get_messages(m.to_id, limit=0, filter=InputMessagesFilterContacts())).total)
     await m.edit(
-      ("<b>✉️Всього повдомлень:</b> {}\n"+
-       "<b>🖼️Всього фото:</b> {}\n"+
-       "<b>📹Всього відео:</b> {}\n"+
-       "<b>🎵Всього аудіоповідомлень: :</b> {}\n"+
-       "<b>🎶Всього голосових:</b> {}\n"+
-       "<b>🎥Всього відеоповідомлень:</b> {}\n"+
-       "<b>📂Всього файлів:</b> {}\n"+
-       "<b>🔗Всього посилань:</b> {}\n"+
-       "<b>🎞️Всього GIF:</b> {}\n"+
-       "<b>🗺️Всього відправлених координат:</b> {}\n"+
-       "<b>👭Контактів:</b> {}").format(al, ph, vi, mu, vo, vv, do, urls, gifs, geos, cont))
+      ("<b>✉️ Всього повдомлень:</b> {}\n"+
+       "<b>🖼️ Всього фото:</b> {}\n"+
+       "<b>📹 Всього відео:</b> {}\n"+
+       "<b>🎵 Всього аудіоповідомлень: </b> {}\n"+
+       "<b>🎶 Всього голосових:</b> {}\n"+
+       "<b>🎥 Всього відеоповідомлень:</b> {}\n"+
+       "<b>📂 Всього файлів:</b> {}\n"+
+       "<b>🔗 Всього посилань:</b> {}\n"+
+       "<b>🎞️ Всього GIF:</b> {}\n"+
+       "<b>🗺️ Всього відправлених координат:</b> {}\n"+
+       "<b>👭 Контактів:</b> {}").format(al, ph, vi, mu, vo, vv, do, urls, gifs, geos, cont))
