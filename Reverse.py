@@ -86,14 +86,18 @@ class ReverseMod(loader.Module):
 	async def revcmd(self, message):
 		""".rev <текст або реплай>"""
 
+
 		try:
 			text = utils.get_args_raw(message)
-		try:
-			reply = await message.get_reply_message()
+			await message.edit(str(reverse(text)))
 		except:
 			await message.edit("Еррор.")
 
-		await message.edit(reply)
+		try:
+			reply = await message.get_reply_message()
+			await message.edit(str(reverse(reply)))
+		except:
+			await message.edit("Еррор.")
 
 
 #		if not text and not reply:
