@@ -20,7 +20,7 @@ class ReverseMod(loader.Module):
 		
 			if text:
 				arglist = list(text)
-				await message.edit('Думаю...')
+				await message.edit('Думаю ...')
 				sleep(1)
 				newlist = []
 				result = ''
