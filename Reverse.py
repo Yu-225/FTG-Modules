@@ -3,10 +3,10 @@ from .. import loader, utils
 def register(cb):
 	cb(ReverseMod())
 
-async def reverse(self, arg):
-	self.arglist = list(arg)
-	self.newlist = []
-	self.result = ''
+async def reverse(arg):
+	arglist = list(arg)
+	newlist = []
+	result = ''
 
 	for char in arglist:
 		if char=='q':
