@@ -7,10 +7,10 @@ def register(cb):
 class ReverseMod(loader.Module):
 	"""Реверс"""
 	strings = {'name': 'Reverse'}
-	async def reverse(arg):
-		arglist = list(arg)
-		newlist = []
-		result = ''
+	async def reverse(self, arg):
+		self.arglist = list(arg)
+		self.newlist = []
+		self.result = ''
 
 		for char in arglist:
 			if char=='q':
