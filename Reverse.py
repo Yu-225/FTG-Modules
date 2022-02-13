@@ -88,7 +88,9 @@ class ReverseMod(loader.Module):
 		text = utils.get_args_raw(message)
 		reply = await message.get_reply_message()
 
-		await message.edit(str(reverse(text)))
+		aaa = reverse(text)
+
+		await message.edit(str(aaa))
 
 
 #		if not text and not reply:
