@@ -1,4 +1,5 @@
 from .. import loader, utils
+from time import sleep
 
 
 async def reverse(arg):
@@ -93,6 +94,10 @@ class ReverseMod(loader.Module):
 		
 			if text:
 				await message.edit("text")
+				sleep(2)
+				await message.edit(reverse(text))
+				sleep(2)
+
 			if reply:
 				await message.edit("reply")
 
