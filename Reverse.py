@@ -1,13 +1,12 @@
 from .. import loader, utils
-from telethon.errors import MessageEmptyError
 
 def register(cb):
 	cb(ReverseMod())
 
-async def reverse(arg):
-	arglist = list(arg)
-	newlist = []
-	result = ''
+async def reverse(self, arg):
+	self.arglist = list(arg)
+	self.newlist = []
+	self.result = ''
 
 	for char in arglist:
 		if char=='q':
@@ -87,16 +86,11 @@ class ReverseMod(loader.Module):
 	strings = {'name': 'Reverse'}	
 	async def revcmd(self, message):
 		""".rev <текст або реплай>"""
-		try:
-			text = utils.get_args_raw(message)
-			reply = await message.get_reply_message()
-			if not text and not reply:
-				return await message.edit("Тут нема тексту.")
-			if reply:
-				aaa = reverse(reply)
-				return await message.edit(str(aaa))
-			if text:
-				aaa = reverse(text)
-				return await message.edit(str(aaa))
-		except MessageEmptyError:
-			return await message.edit("Це не текст.")
+		text = utils.get_args_raw(message)
+		reply = await message.get_reply_message()
+		if not text and not reply:
+			return await message.edit("Тут нема тексту.")
+		if reply:
+			return await message.edit(str(reverse(reply)))
+		if text:
+			return await message.edit(str(reverse(text)))
