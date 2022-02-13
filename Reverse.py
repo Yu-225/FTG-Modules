@@ -14,6 +14,9 @@ class ReverseMod(loader.Module):
 		try:
 			text = utils.get_args_raw(message)
 			reply = await message.get_reply_message()
+
+			if not text and not reply:
+				await message.edit('Тут немає туксту')
 		
 			if text:
 				arglist = list(text)
