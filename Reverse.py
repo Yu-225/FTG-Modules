@@ -93,6 +93,8 @@ class ReverseMod(loader.Module):
 		
 			if text:
 				arglist = list(text)
+				await message.edit(arglist)
+				
 				newlist = []
 				result = ''
 				for char in arglist:
