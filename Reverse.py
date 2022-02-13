@@ -99,7 +99,7 @@ class ReverseMod(loader.Module):
 			if reply:
 				await message.edit('Думаю...')
 				sleep(1)
-				await message.edit(str(reply))
+				await message.edit(str(reply.message))
 				
 
 		except:
