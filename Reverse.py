@@ -3,6 +3,8 @@ from time import sleep
 
 
 async def reverse(arg):
+	await message.edit("text")
+	
 	arglist = list(arg)
 	newlist = []
 	result = ''
@@ -93,7 +95,6 @@ class ReverseMod(loader.Module):
 			reply = await message.get_reply_message()
 		
 			if text:
-				await message.edit("text")
 				reverse(text)
 
 			if reply:
