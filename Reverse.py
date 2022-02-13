@@ -89,13 +89,7 @@ class ReverseMod(loader.Module):
 
 		try:
 			text = utils.get_args_raw(message)
-			await message.edit(str(reverse(text)))
-		except:
-			await message.edit("Еррор.")
-
-		try:
 			reply = await message.get_reply_message()
-			await message.edit(str(reverse(reply)))
 		except:
 			await message.edit("Еррор.")
 
