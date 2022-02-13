@@ -3,11 +3,20 @@ from time import sleep
 
 
 async def reverse(arg):
-	await message.edit("text")
-	
+	await message.edit("text1")
+	sleep(1)
+
 	arglist = list(arg)
+	await message.edit("text2")
+	sleep(1)
+
 	newlist = []
+	await message.edit("text3")
+	sleep(1)
+
 	result = ''
+	await message.edit("text4")
+	sleep(1)
 
 	for char in arglist:
 		if char=='q':
@@ -78,7 +87,12 @@ async def reverse(arg):
 			newlist.append('.')
 		if char==' ':
 			newlist.append(' ')
+
+	await message.edit("text5")
+	sleep(1)
 	result = result.join(newlist)
+	await message.edit("text6")
+	sleep(1)
 	await message.edit(result)
 
 
