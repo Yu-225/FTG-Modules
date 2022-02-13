@@ -1,7 +1,5 @@
 from .. import loader, utils
 
-def register(cb):
-	cb(ReverseMod())
 
 async def reverse(arg):
 	arglist = list(arg)
@@ -83,17 +81,21 @@ async def reverse(arg):
 
 class ReverseMod(loader.Module):
 	"""Реверс"""
-	strings = {'name': 'Reverse'}	
+	strings = {'name': 'Reverse'}
+
 	async def revcmd(self, message):
 		""".rev <текст або реплай>"""
 		text = utils.get_args_raw(message)
 		reply = await message.get_reply_message()
 
-		if not text and not reply:
-			await message.edit("Тут нема тексту.")
+		await message.edit(str(reverse(text)))
 
-		if reply:
-			await message.edit(str(reverse(reply)))
 
-		if text:
-			await message.edit(str(reverse(text)))
+#		if not text and not reply:
+#			await message.edit("Тут нема тексту.")
+#
+#		if reply:
+#			await message.edit(str(reverse(reply)))
+#
+#		if text:
+#			await message.edit(str(reverse(text)))
