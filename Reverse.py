@@ -77,7 +77,7 @@ async def reverse(arg):
 		if char==' ':
 			newlist.append(' ')
 	result = result.join(newlist)
-	return result
+	await message.edit(result)
 
 
 class ReverseMod(loader.Module):
@@ -94,9 +94,7 @@ class ReverseMod(loader.Module):
 		
 			if text:
 				await message.edit("text")
-				sleep(2)
-				await message.edit(reverse(text))
-				sleep(2)
+				reverse(text)
 
 			if reply:
 				await message.edit("reply")
