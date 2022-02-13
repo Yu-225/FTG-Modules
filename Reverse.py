@@ -88,9 +88,12 @@ class ReverseMod(loader.Module):
 		""".rev <текст або реплай>"""
 		text = utils.get_args_raw(message)
 		reply = await message.get_reply_message()
+
 		if not text and not reply:
-			return await message.edit("Тут нема тексту.")
+			await message.edit("Тут нема тексту.")
+
 		if reply:
-			return await message.edit(str(reverse(str(reply))))
+			await message.edit(str(reverse(reply)))
+
 		if text:
-			return await message.edit(str(reverse(str(text))))
+			await message.edit(str(reverse(text)))
