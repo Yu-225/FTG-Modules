@@ -4,10 +4,10 @@ from telethon.errors import MessageEmptyError
 def register(cb):
 	cb(ReverseMod())
 
-async def reverse(self, arg):
-	self.arglist = list(arg)
-	self.newlist = []
-	self.result = ''
+async def reverse(arg):
+	arglist = list(arg)
+	newlist = []
+	result = ''
 
 	for char in arglist:
 		if char=='q':
@@ -88,15 +88,15 @@ class ReverseMod(loader.Module):
 	async def revcmd(self, message):
 		""".rev <текст або реплай>"""
 		try:
-			arg = utils.get_args_raw(message)
+			text = utils.get_args_raw(message)
 			reply = await message.get_reply_message()
-			if not arg and not reply:
+			if not text and not reply:
 				return await message.edit("Тут нема тексту.")
 			if reply:
 				aaa = reverse(reply)
 				return await message.edit(str(aaa))
-			if arg:
-				aaa = reverse(arg)
+			if text:
+				aaa = reverse(text)
 				return await message.edit(str(aaa))
 		except MessageEmptyError:
 			return await message.edit("Це не текст.")
