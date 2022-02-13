@@ -91,6 +91,6 @@ class ReverseMod(loader.Module):
 		if not text and not reply:
 			return await message.edit("Тут нема тексту.")
 		if reply:
-			return await message.edit(str(reverse(reply)))
+			return await message.edit(str(reverse(str(reply))))
 		if text:
-			return await message.edit(str(reverse(text)))
+			return await message.edit(str(reverse(str(text))))
